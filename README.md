@@ -1,6 +1,3 @@
-Crime Analysis Engine(CMPE 272 Project) (Project Team 1)
-=========================================================
-
 -------------------------
 Crime Analysis Engine 
 -------------------------   
@@ -240,10 +237,3 @@ Technology Used
 6. Jquery
 7. CSS
 8. Apache Cordova
-
-Team Members
--------------
-1. Omkar Gudekar
-2. Larkins Carvalho
-3. Nielet Dmello
-4. Sagar Bendale
