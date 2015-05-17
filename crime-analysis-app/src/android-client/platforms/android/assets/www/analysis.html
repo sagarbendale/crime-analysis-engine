@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Crime Analysis Result</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="common/css/app.min.css">
+    <script src="common/js/jquery.js"></script>
+    <script src="common/js/jquery.touchwipe.min.js"></script>
+    <script src="common/js/main.min.js"></script>
+   
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="src/js/charts.js"></script>
+
+    <script src="src/js/plotmap.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+        
+
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(load_page_data);
+      function load_page_data()
+      {  
+            $.getJSON("http://ec2-54-148-248-224.us-west-2.compute.amazonaws.com:8080/app/rest/analysis/byDay?callback=?", null, function(x)      
+            {
+                 drawCrimeByTime(x);  
+
+                 drawCrimeByDay(x);  
+
+                 drawCrimeByType(x);
+
+                 plotCrimeMap();
+   
+            });
+            
+
+    } 
+
+    </script>
+    
+
+      
+      
+    </script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header style="background:#3D3D3D;">
+            <h1>Crime Analysis Engine</h1>
+        </header>
+        <div class="app-content">
+            <div class="tabbed-list-view-nav">
+                <a href="#" class="span-50 on">Analysis</a> 
+                <a href="#" class="span-50 on">Crime Map</a> 
+                <div class="tabbed-list-view-nav-arrow">&nbsp;</div>
+            </div>
+            <ul class="tabbed-list-view">
+                <li>
+                    <ul class="list-view with-swipe left-thumbs right-one-icons">
+                        <li> 
+                            <div class="thumbs">
+                                      <div id="crime_by_day" style="width:200%;"></div>
+                                      <div id="crime_by_time" ></div>
+                                      <div id="crime_by_type" ></div>
+    
+                            </div>
+                                
+                        </li>
+ 
+                    </ul>
+                </li>
+                               <li>
+                    <ul class="list-view with-swipe left-thumbs right-one-icons">
+                         <li>
+                            <div class="thumbs" >
+                                <center>
+                                    <div id="crime_map" style="width: 500px; height: 400px;" ></div>
+                                </center>
+                            </div>
+                            
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--.tabbed-list-view-->
+        </div>
+        <!--#app-content-->
+    </div>
+    <!--#app-wrapper-->
+</body>
+</html>

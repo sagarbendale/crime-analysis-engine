@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.crimeanalysisengine" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Crime-Analyis-Engine</name>
+    <description>
+        A demo application for CMPE 272 Project.
+    </description>
+    <author email="omkargudekar@gmail.com" href="http://www.omkar.rocks">
+        Omkar Gudekar
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
+
